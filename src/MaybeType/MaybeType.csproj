@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\build\version.props" />
+  <Import Project="..\..\build\packaging.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <AssemblyName>LambdaEcho.MaybeType</AssemblyName>
+    <RootNamespace>LambdaEcho.MaybeType</RootNamespace>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+
+</Project>

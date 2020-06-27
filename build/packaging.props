@@ -1,0 +1,23 @@
+<Project>
+    <PropertyGroup>
+		<PackageId>LambdaEcho.Maybe</PackageId>
+		<Authors>Lambda Echo</Authors>
+		<Company></Company>
+		<Description>Yet another Maybe! This Maybe is an immutable monad type with enhancements for functional programming in C#. It implements several IEquatable and IComparable to nestle smoothly into existing code.</Description>
+		<Product>Functional Maybe Type for C#</Product>
+		<Copyright>Copyright (c) $([System.DateTime]::Now.ToString(yyyy))</Copyright>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/LambdaEcho/MaybeType</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/LambdaEcho/MaybeType</PackageProjectUrl>
+		<PackageTags>Maybe Option Optional Functional Fluent</PackageTags>
+		<PackageReleaseNotes></PackageReleaseNotes>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseFile></PackageLicenseFile>
+		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+		<PackageIcon>pkglogo.png</PackageIcon>
+    </PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\deploy\pkglogo.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+</Project>
