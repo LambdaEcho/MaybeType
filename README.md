@@ -49,7 +49,7 @@ var value = maybe.ValueOr(() => { new Maybe<int>(42) }); // returns 42 after inv
 
 **Transformations**
 ```
-var something = Maybe.Crete<int>(42);
+var something = Maybe.Create<int>(42);
 var somethingAsString = something.Map(value => value.ToString()); // returns "42"
 
 var nothing = Maybe.Nothing<int>();
