@@ -12,8 +12,12 @@ A `Maybe<T>` is called a **Nothing**, if the value of the encapsulated variable 
 - Sophisticated fluent functional enhancements enables you to write program statments that can be read like a sentence and therefore understood by everyone.
 - Replace `null` by `Maybe<T>` and avoid the [billion-dollar mistake](https://en.wikipedia.org/wiki/Tony_Hoare).
 
-## Why is the implementation of `IEnumerable<T>` missing?
-While former version implemented `IEnumerable<Maybe<T>>`, the most recent version does not. Although the `Maybe<T>` could really benefit from `IEnumerable`'s `SelectMany()`, other methods are ambiguous and redundant, like `Any()` and `Count()`. Even worse, method `All()` wouldn't work at all and would lead to incorrect results, and, thus, break the semantics!
+## Does `Maybe<T>` support `IEnumerable<T>`, too?
+While former versions implemented `IEnumerable<Maybe<T>>`, the most recent version does not. Although the `Maybe<T>` could really benefit from `IEnumerable`'s `SelectMany()`, other methods are ambiguous and redundant, like `Any()` and `Count()`. Even worse, method `All()` wouldn't work at all and would lead to incorrect results, and, thus, break the semantics!
+
+**Extension Methods for `IEnumerable<Maybe<T>>`**
+
+However, there are extension methods available that provide convenient handling of `IEnumerable<Maybe<T>>`, such as `InvokeEach()` and `MapEach()`.
 
 ## Usage
 First of all, the `Maybe<T>` is [available for download](https://www.nuget.org/packages/LambdaEcho.Maybe/) as package [in the NuGet Gallery](https://www.nuget.org/packages/LambdaEcho.Maybe/).
@@ -54,4 +58,14 @@ var somethingAsString = something.Map(value => value.ToString()); // returns "42
 
 var nothing = Maybe.Nothing<int>();
 var nothingAsString = nothing.Map(value => value.ToString(), () => "There is no int"); // returns "There is no int"
+```
+
+**Work with an enumeration**
+```
+var array = new[] { Maybe.Create(42), Maybe.Nothing<int>() };
+var results = new Collection<string>();
+array.InvokeEach(m => results.Add(m.ToString()), () => results.Add("Nothing"));
+
+var array = new[] { Maybe.Create(42), Maybe.Nothing<int>() };
+var mappedList = array.MapEach(m => m.ToString(), () => "Nothing").ToList();
 ```

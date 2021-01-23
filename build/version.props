@@ -1,7 +1,7 @@
 <Project>
     <!-- This property group is only used in builds that do not run the script, like debugging builds in your IDE. -->
     <PropertyGroup>
-        <XTargetSemVer>3.1.0</XTargetSemVer>
+        <XTargetSemVer>3.2.0</XTargetSemVer>
     </PropertyGroup>
 
     <!-- This property group may be overwritten by automation. -->
